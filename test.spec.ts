@@ -1,0 +1,33 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://miaki.co/');
+  await page.getByRole('banner').getByRole('link', { name: 'Career' }).click();
+  await page.locator('.theme-btn').first().click();
+  await page.getByRole('link', { name: 'Apply For The Job' }).first().click();
+  await page.getByRole('textbox', { name: 'Ex :First Name' }).click();
+  await page.getByRole('textbox', { name: 'Ex :First Name' }).fill('internal');
+  await page.getByRole('textbox', { name: 'Ex :Last Name' }).click();
+  await page.getByRole('textbox', { name: 'Ex :Last Name' }).fill('internal');
+  await page.getByRole('textbox', { name: 'Ex : info@miaki.co' }).click();
+  await page.getByRole('textbox', { name: 'Ex : info@miaki.co' }).fill('internal.com');
+  await page.getByRole('textbox', { name: 'Ex : info@miaki.co' }).press('ArrowLeft');
+  await page.getByRole('textbox', { name: 'Ex : info@miaki.co' }).press('ArrowLeft');
+  await page.getByRole('textbox', { name: 'Ex : info@miaki.co' }).press('ArrowLeft');
+  await page.getByRole('textbox', { name: 'Ex : info@miaki.co' }).press('ArrowLeft');
+  await page.getByRole('textbox', { name: 'Ex : info@miaki.co' }).fill('internal@co.com');
+  await page.getByRole('textbox', { name: 'Ex : 8801*********' }).click();
+  await page.getByRole('textbox', { name: 'Ex : 8801*********' }).fill('0182484843');
+  await page.getByRole('textbox', { name: 'Ex : 2 years 6 months' }).click();
+  await page.getByRole('textbox', { name: 'Ex : 2 years 6 months' }).fill('1');
+  await page.getByRole('textbox', { name: 'Ex : PHP: Laravel; Python:' }).click();
+  await page.getByRole('textbox', { name: 'Ex : PHP: Laravel; Python:' }).fill('php');
+  await page.getByRole('textbox', { name: 'Ex : 30,000 BDT' }).click();
+  await page.getByRole('textbox', { name: 'Ex : 30,000 BDT' }).fill('33333');
+  await page.getByRole('button', { name: 'Choose File' }).click();
+  await page.getByRole('button', { name: 'Choose File' }).setInputFiles('airTosmia.pdf');
+  await page.getByRole('button', { name: 'Submit' }).click();
+  await page.getByRole('textbox', { name: 'Ex : 8801*********' }).click();
+  await page.getByRole('textbox', { name: 'Ex : 8801*********' }).fill('01824848430');
+  await page.getByRole('button', { name: 'Submit' }).click();
+});
